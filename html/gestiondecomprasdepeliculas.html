@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo4.css">
+    <script src="../js/clasesobjetos.js"></script>
+    <script src="../js/gestioncomprapeliculas.js"></script>
+    <title>Gestión de compra de películas</title>
+</head>
+
+<body>
+    <form action="">
+        <h1>Gestion de compra de películas</h1>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+        
+    </style>
+    <h2>Información general de compra</h2><br><br>
+    <style>
+        h2 {
+            margin: 0 50px;
+        }
+    </style>
+    <div class="container">
+        <div class="item"><strong>Fecha:</strong><br>
+            <input type="date" id="fecha">
+        </div>
+        <div class="item"><strong>Número de la compra:</strong><br><input type="number" id="numeroCompra"></div>
+        <div class="item"><strong>Sucursal:</strong><br><input type="text" id="sucursal"></div>
+    </div><br><br>
+    <h2>Información específica de la compra</h2><br><br>
+
+    <div class="container">
+        <div class="item"><strong>película:</strong><br>
+            <input type="text" id="pelicula">
+        </div>
+        <div class="item"><strong>Cantidad:</strong><br><input type="number" id="cantidad"></div>
+        <div class="item"><strong>Precio:</strong><br>
+            <input type="number" id="precio">
+        </div>
+    </div><br><br>
+
+    <div class="botones-container">
+        <input type="button" value="Agregar a la tabla" onclick="agregarALaTabla()">
+        <button id="eliminarBtn" onclick="eliminarDeLaTabla()">Eliminar de la tabla</button>
+    </div><br><br>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table id="tablaCompra">
+
+        <tr>
+            <th>Película</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+        </tr>
+
+    </table><br>
+
+    <div class="item2" style="text-align: right;">
+        <strong>Total</strong> <input type="number" id="total" readonly style="width: 345px; height: 30px;">
+    </div><br><br>
+
+    <div class="botones-container">
+        <input type="submit" value="Guardar" onclick="guardarCompra()">
+        <input type="button" value="Consultar" onclick="consultarCompra()">
+       <input type="button" value="Modificar">
+        <input type="reset" value="Cancelar">
+    </div>
+    </form>
+    
+
+</body>
+
+</html>

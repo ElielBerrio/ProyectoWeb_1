@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo5.css">
+    <script src="../js/gestiondeclientes.js"></script>
+    <script src="../js/clasesobjetos.js"></script>
+    <title>Gestión de clientes</title>
+</head>
+
+<body>
+    <h1>Gestión de clientes</h1>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+        
+    </style>
+    <h2>Información general del cliente</h2>
+
+    <form action="">
+        <div class="container">
+            <div class="item2"><strong>Nombres:</strong><br><input type="text" id="Nombres"></div>
+            <div class="item2"><strong>Apellidos:</strong><br><input type="text" id="Apellidos"></div>
+            <div class="item2"><strong>Identificación:</strong><br><input type="number" id="Identificación"></div>
+            <div class="item2"><strong>Sexo:</strong><br>
+                <select style="width: 175px;" id="sexo">
+                    <option disabled selected value>Seleccione una opción</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select><br>
+            </div>
+    
+        </div><br><br><br>
+    
+        <div class="container">
+            <div class="item2"><strong style="font-size: 13px;">Correo electronico personal:</strong><br><input id="correo" type="text">
+            </div>
+            <div class="item2"><strong>Numero de celular:</strong><br><input type="number" id="Numero"></div>
+            <div class="item2"><strong>Fecha de nacimiento:</strong><br><input type="date" style="width: 172px;" id="fechaNacimiento"><br></div>
+            <div class="item2"><strong>Identificador:</strong><br><input type="text" id="Identificador"><br></div>
+        </div><br><br>
+    
+        <div class="container">
+            <div class="item2"><strong>Contraseña:</strong><br><input type="password" id="Contrasena"><br></div>
+        </div>
+        <h2>Información de la dirección del cliente</h2><br>
+    
+        <div class="container">
+            <div class="item2"><strong>Calle:</strong><br><input type="text" id="Calle"></div>
+            <div class="item2"><strong>Carrera:</strong><br><input type="number" id="Carrera"></div>
+            <div class="item2"><strong>Manzana:</strong><br><input type="number" id="Manzana"><br>
+            </div>
+            <div class="item2"><strong>Barrio:</strong><br><input type="text" id="Barrio"></div>
+        </div><br><br>
+    
+        <div class="botones-container">
+            <input type="button" value="Agregar a la tabla" onclick="agregarALaTabla()"> 
+            <button id="eliminarBtn" onclick="eliminarDeLaTabla()">Eliminar de la tabla</button>
+    
+        </div><br><br>
+    
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            th {
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+            }
+    
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    
+    
+    
+        <table id="tablaClientes" border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Identificación</th>
+                    <th>Correo electrónico</th>
+                    <th>Numero de celular</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Sexo</th>
+                    <th>Identificador</th>
+                    <th>Contraseña</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+        </table><br><br>
+    
+        <div class="botones-container">
+            <input type="submit" onclick="guardarCliente()" value="Guardar">
+            <input type="button" value="Modificar">
+            <input type="button" name="" value="Consultar" onclick="consultarCliente()" id="Consultar">
+            <input type="reset" id="Cancelar" value="Cancelar">
+        </div>
+
+    </form>
+
+</body>
+
+</html>

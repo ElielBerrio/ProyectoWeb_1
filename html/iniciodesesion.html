@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/Iniciarsesion.js"></script>
+    <script src="../js/gestionusuarios.js"></script>
+    <script src="../js/clasesobjetos.js"></script>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+        
+        body {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contenedor {
+            text-align: center;
+        }
+    </style>
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Iniciar sesión</h1>
+    <div class="contenedor">
+        <div>
+            <form action="javascript:iniciarSesion()">
+
+                <input type="text" id="Identificacion" style="height: 30px; width: 200px;" placeholder="Identificación"> <br> <br>
+                <input type="password" id="Contrasena" style="height: 30px; width: 200px;" placeholder="Contraseña"> <br> <br>
+                <input type="submit" value="Iniciar Sesion" style="height: 30px; width: 150px;"> <br> <br>
+                <label for=""><strong style="font-size: 20px;">¿Aún no estás registrado?</strong></label> <br> <br>
+                <input type="button" onclick="registrarse()" value="Regístrate" style="height: 30px; width: 150px;">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    
+  }
+  .botones-container {
+    text-align: center;
+  }
+  .botones-container button {
+    margin-right: 30px;
+  }  
+  
+  
+  .item {
+    margin: 0 10px; 
+  }
+
+

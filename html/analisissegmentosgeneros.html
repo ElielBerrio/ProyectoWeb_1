@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Análisis de segmentos de géneros de películas por sexo </title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    body{
+        background-color: aliceblue;
+    }
+    h1 {
+        text-align: center;
+        background-color: burlywood;
+        color: white;
+
+
+    }
+    h2 {
+        color: burlywood;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Análisis de segmentos de géneros de películas por sexo </h1>
+
+    <h3>Elige el sexo:</h3>
+
+    <select name="sexo" id="sexo" style="height: 30px; width: 120px; font-size: 18px;" onchange="actualizarGrafico()">
+        <option value="Todos">Todos</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+    </select> <br> <br>
+
+    <canvas id="myChart" style="width: 600px; height: 300px;"></canvas>
+
+    <script>
+        var data = {
+            labels: ['Terror', 'Acción', 'Aventura', 'Drama'],
+            datasets: [{
+                data: [100, 150, 80, 232],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(0, 255, 0, 0.8)'
+                ]
+            }]
+        };
+
+        // Configuración del gráfico
+        var options = {
+            responsive: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    barThickness: 20
+                },
+                y: {
+                    beginAtZero: true,
+                    min: 0, // Valor mínimo del eje y
+                    max: 1000 // Valor máximo del eje y
+                }
+            }
+        };
+
+        // Crear el gráfico inicial
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+        // Función para actualizar el gráfico según la opción seleccionada
+        function actualizarGrafico() {
+            var sexoSeleccionado = document.getElementById('sexo');
+            var opcion = sexoSeleccionado.value;
+
+            // Actualizar los datos del gráfico según la opción seleccionada
+            if (opcion === 'Todos') {
+                chart.data.datasets[0].data = [100, 150, 80, 443];
+            } else if (opcion === 'Femenino') {
+                chart.data.datasets[0].data = [205, 510, 343, 336];
+            } else if (opcion === 'Masculino') {
+                chart.data.datasets[0].data = [428, 112, 226, 500];
+            }
+
+            // Actualizar el gráfico
+            chart.update();
+        }
+    </script>
+</body>
+
+</html>

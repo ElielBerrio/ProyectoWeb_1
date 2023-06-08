@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+
+  
+}
+  .estilo{
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .item {
+    margin: 0 20px; 
+  }
+  
+  .botones-container button {
+    
+    margin: 10px;
+    
+  }  
+
+  .item2{
+    margin: 0 200px;
+
+  }
+  .item3{
+    margin: 0 230px;
+    
+  }
+  .item4{
+    margin: 0 390px;
+  }
+
+  .item5{
+    margin: 0 350px;
+  }
+  
+  .table-contenedor {
+    display: flex;
+   margin: 0 250px;
+    align-items: center;
+    padding: 8px;
+    
+    
+    
+    
+    
+  }
+  
+ 

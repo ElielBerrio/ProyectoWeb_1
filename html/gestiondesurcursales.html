@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/estilo1.css">
+  <script src="../js/detalles.js"></script>
+  <script src="../js/gestionsucursales.js"></script>
+  <script src="../js/clasesobjetos.js"></script>
+  <title>Gestión de surcursales</title>
+</head>
+
+<body>
+  <h1>Gestión de surcursales</h1>
+  <style>
+    body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+        
+  </style>
+  <h2>Información general de surcursal</h2>
+
+  <form action="">
+    <div class="container">
+      <div class="item"><strong>Código</strong><br>
+        <input type="text" id="codigo">
+      </div>
+      <div class="item"><strong>Dirección</strong><br><input type="text" id="direccion"></div>
+      <div class="item"><strong>Barrio</strong><br><input type="text" id="barrio"></div>
+      <div class="item">
+        <strong>Departamento</strong><br>
+        <select style="width: 130px;" name="" id="departamento">
+          <option value=""></option>
+        </select>
+      </div>
+      <div class="item">
+        <strong>Ciudad</strong><br>
+        <select style="width: 130px ;" name="" id="ciudad">
+          <option value=""></option>
+        </select>
+      </div>
+    </div><br><br><br><br><br>
+  
+    <div class="container">
+      <div class="item"><strong>Numero de trabajadores</strong><br>
+        <input type="number" id="numeroTrabajadores">
+      </div>
+      <div class="item"><strong>Gerente encargado</strong><br><input type="text" id="gerenteEncargado"></div>
+      <div class="item"><strong>Numero de salas</strong><br><input type="number" id="numeroSalas"></div> 
+      <div class="item"><strong>Posee cafeteria</strong><br>Si<input type="radio" name="opcion" value="si"> No
+        <input type="radio" name="opcion" value="no">
+      </div>
+    </div><br><br><br>
+  
+  
+    <div class="botones-container">
+      <input type="button" value="Agregar a la tabla" onclick="agregarALaTabla()">
+      <button id="eliminarBtn" onclick="eliminarDeLaTabla()">Eliminar de la tabla</button>
+    </div><br><br><br>
+  
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+    </style>
+  
+    <table id="tablaSucursales" border="1">
+      <tr>
+        <th>Código </th>
+        <th>Dirección</th>
+        <th>Barrio</th>
+        <th>Departamento</th>
+        <th>Ciudad</th>
+        <th>Número de trabajores</th>
+        <th>Gerente encargado</th>
+        <th>Número de salas</th>
+        <th>Posee cafetería</th>
+      </tr>
+    </table><br><br><br>
+  
+    <div class="botones-container">
+      <input type="submit" value="Guardar" onclick="guardarSucursal()">
+      <input type="button" value="Consultar" onclick="consultarSucursal()">
+      <input type="button" value="Modificar">
+      <input type="reset" value="Cancelar">
+    </div><br><br><br>
+  
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+    </style>
+  </form>
+    
+</body>
+
+</html>

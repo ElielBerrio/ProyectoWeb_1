@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/gestionpeliculas.js"></script>
+    <script src="../js/clasesobjetos.js"></script>
+    <link rel="stylesheet" href="../css/estilo7.css">
+    <title>Gestión de películas</title>
+
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Gestión de películas</h1>
+
+    <h2>Información general de películas</h2>
+
+    <form action="">
+        <div class="divSuperior">
+            <div class="contenedor">
+                <div class="contenedor" style="width: 100%;">
+                    <div class="divs" style="padding-left: 20px;">
+                        <Strong>Código asignado</Strong> <br>
+                        <input type="number" id="codigoAsignado">
+                    </div>
+                    <div class="divs">
+                        <Strong>Nombre Original</Strong> <br>
+                        <input type="text" id="nombreOriginal">
+                    </div>
+                    <div class="divs">
+                        <Strong>Nombre asignado</Strong> <br>
+                        <input type="text" id="nombreAsignado">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br> <br>
+
+        <div class="divMedio">
+            <div class="contenedor">
+                <div class="divs" style="padding-left: 20px;">
+                    <Strong>Género</Strong> <br>
+                    <input type="text" name="" id="genero" style="width: 248px;"> <br>
+                    <div class="contenedor" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div>
+                            <input type="button" value="Agregar a la lista" onclick="agregarALaLista()"
+                                style="height: 33px; width: 120px;">
+                        </div>
+                        ㅤ
+                        <div>
+                            <input type="button" value="Eliminar de la lista" onclick="eliminarDeLaLista()"
+                                style="height: 33px; width: 120px;">
+                        </div>
+                    </div>
+                    <div>
+                        <select name="" id="listaGenero" style="width: 255px;"></select>
+                    </div>
+                </div>
+
+                <div class="divs">
+                    <Strong>Duración</Strong> <br>
+                    <div class="contenedor" style="padding-top: 10px ;">
+                        <div>
+                            <strong>Hora(s)</strong> <br>
+                            <input type="number" id="hora" style="width: 45px; margin-right: 8px;">
+                        </div>
+                        <div>
+                            <strong>Min(s)</strong> <br>
+                            <input type="number" id="minuto" style="width: 45px; margin-right: 8px;">
+                        </div>
+                        <div>
+                            <strong>Seg(s)</strong> <br>
+                            <input type="number" id="segundo" style="width: 45px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divs">
+                    <div>
+                        <strong>Idioma Original</strong> <br>
+                        <input type="text" name="" id="idiomaOriginal">
+                    </div> <br>
+                    <div>
+                        <strong>Productora</strong> <br>
+                        <input type="text" id="productora">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Información adicional de películas</h2>
+
+        <div class="contenedor" style="width: 100%;">
+            <div style="width: 50%; text-align: center;">
+                <strong>Número de Copias</strong> <br>
+                <input type="number" id="numeroCopias">
+            </div>
+            <div style="width: 50%; text-align: center;">
+                <strong>Número de afiches disponibles</strong> <br>
+                <input type="number" name="" id="numeroAfiches" style="width: 200px;">
+            </div>
+        </div> <br> <br> <br>
+
+        <div class="contenedor" style="width: 100%;">
+            <div style="width: 25%; padding-left: 20px;">
+                <strong>Actores principales</strong> <br>
+                <input type="text" name="" id="actoresPrincipales" style="width: 250px;">
+                <div class="contenedor" style="padding-top: 10px; padding-bottom: 10px;">
+                    <div>
+                        <input type="button" value="Agregar a la tabla" onclick="agregarALaTablaActoresPrincipales()"
+                            style="height: 33px; width: 120px;">
+                    </div>
+                    ㅤ
+                    <div>
+                        <input type="button" value="Eliminar de la tabla"
+                            onclick="eliminarDeLaTablaActoresPrincipales()" style="height: 33px; width: 125px;">
+                    </div>
+                </div>
+                <table id="tablaActoresPrincipales" style="width: 260px;" border="1">
+                    <tr>
+                        <th>Actores Principales</th>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 25%;">
+                <strong>Subtitulos Disponibles</strong> <br>
+                <input type="text" name="" id="subtitulosDisponibles" style="width: 250px;">
+                <div class="contenedor" style="padding-top: 10px; padding-bottom: 10px;">
+                    <div>
+                        <input type="button" value="Agregar a la tabla" onclick="agregarALaTablaSubtitulosDisponibles()"
+                            style="height: 33px; width: 120px;">
+                    </div>
+                    ㅤ
+                    <div>
+                        <input type="button" value="Eliminar de la tabla"
+                            onclick="eliminarDeLaTablaSubtitulosDisponibles()" style="height: 33px; width: 124px;">
+                    </div>
+                </div>
+                <table id="tablaSubtitulosDisponibles" style="width: 260px;" border="1">
+                    <tr>
+                        <th>Subtitulos Disponibles</th>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 25%;">
+                <strong>Actores Secundarios</strong> <br>
+                <input type="text" name="" id="actoresSecundarios" style="width: 250px;">
+                <div class="contenedor" style="padding-top: 10px; padding-bottom: 10px;">
+                    <div>
+                        <input type="button" value="Agregar a la tabla" onclick="agregarALaTablaActoresSecundarios()"
+                            style="height: 33px; width: 120px;">
+                    </div>
+                    ㅤ
+                    <div>
+                        <input type="button" value="Eliminar de la tabla"
+                            onclick="eliminarDeLaTablaActoresSecundarios()" style="height: 33px; width: 124px;">
+                    </div>
+                </div>
+                <table id="tablaActoresSecundarios" style=" width: 260px;" border="1">
+                    <tr>
+                        <th>Actores Secundarios</th>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 25%;">
+                <strong>Idiomas disponibles</strong> <br>
+                <input type="text" name="" id="idiomasDisponibles" style="width: 250px;">
+                <div class="contenedor" style="padding-top: 10px; padding-bottom: 10px;">
+                    <div>
+                        <input type="button" value="Agregar a la tabla" onclick="agregarALaTablaIdiomasDisponibles()"
+                            style="height: 33px; width: 120px;">
+                    </div>
+                    ㅤ
+                    <div>
+                        <input type="button" value="Eliminar de la tabla"
+                            onclick="eliminarDeLaTablaIdiomasDisponibles()" style="height: 33px; width: 120px;">
+                    </div>
+                </div>
+                <table id="tablaIdiomasDisponibles" style=" width: 260px;" border="1">
+                    <tr>
+                        <th>Idiomas Disponibles</th>
+                    </tr>
+                </table>
+            </div>
+        </div> <br> <br>
+
+        <div style="width: 100%; text-align: center;">
+            <input type="submit" value="Guardar" onclick="guardarPelicula()">ㅤ
+            <input type="button" value="Consultar" onclick="consultarPelicula()">ㅤ
+            <input type="button" value="Modificar">ㅤ
+            <input type="reset" value="Cancelar">
+        </div>
+    </form>
+
+</body>
+
+</html>

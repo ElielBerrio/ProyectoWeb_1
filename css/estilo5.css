@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+
+
+}
+
+.item2 {
+  margin: 0 40px;
+}
+
+.botones-container {
+  text-align: center;
+}

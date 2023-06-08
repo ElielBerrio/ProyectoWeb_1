@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo8.css">
+    <script src="../js/gestionventatiquetesenlinea.js"></script>
+    <script src="../js/clasesobjetos.js"></script>
+    <title>Gestión de venta de tiquetes en línea</title>
+</head>
+
+<body>
+    <h1>Gestión de venta de tiquetes en línea</h1>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+            text-align: center;
+            background-color: burlywood;
+            color: white;
+
+
+        }
+        h2 {
+            color: burlywood;
+        }
+
+        table {
+                border-collapse: separate;
+                border-spacing: 0;
+            }
+    
+            td {
+                padding: 10px;
+                border: 1px solid black;
+                border-right: none;
+                border-bottom: none;
+            }
+    
+            td:last-child {
+                border-right: 1px solid black;
+            }
+    
+            tr:last-child td {
+                border-bottom: 1px solid black;
+            }
+    </style>
+
+    <h2>Información general de ventas de tiquetes</h2><br>
+    <form action="">
+        <div class="container">
+            <div class="item">
+                <strong>Horario:</strong><br>
+                <select style="width: 100px;" id="horario">
+                    <option value="" disabled selected>Seleccione</option> 
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="12:15 PM">12:15 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:30 PM">2:30 PM</option>
+                    <option value="3:15 PM">3:15 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="5:30 PM">5:30 PM</option>
+                    <option value="6:15 PM">6:15 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                    <option value="9:15 PM">9:15 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                </select>
+            </div>
+            <div class="item"><strong>Fecha de venta:</strong><br><input type="date" id="fechaVenta"></div>
+            <div><strong>Número de tiquetes:</strong><br><input type="number" id="numeroTiquetes"></div>
+            <div class="item"><strong>Forma de pago:</strong><br><select style="width: 130px;" id="formaPago">
+                    <option value=""></option>
+                    <option value="Debito">Débito</option>
+                    <option value="Credito">Crédito</option>
+                </select></div>
+        </div>
+        <h2>Información específica de venta de tiquetes</h2>
+        <div class="container">
+            <div class="item"><strong>Posición:</strong><br><select style="width: 100px;" id="posicion">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+                <option value="A6">A6</option>
+                <option value="A7">A7</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="B4">B4</option>
+                <option value="B5">B5</option>
+                <option value="B6">B6</option>
+                <option value="B7">B7</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+                <option value="C3">C3</option>
+                <option value="C4">C4</option>
+                <option value="C5">C5</option>
+                <option value="C6">C6</option>
+                <option value="C7">C7</option>
+                <option value="D1">D1</option>
+                <option value="D2">D2</option>
+                <option value="D3">D3</option>
+                <option value="D4">D4</option>
+                <option value="D5">D5</option>
+                <option value="D6">D6</option>
+                <option value="D7">D7</option>
+                </select></div>
+            <div class="item"><strong>Sala:</strong><br><select style="width: 100px;" id="sala">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                </select></div>
+            <div class="item"><strong>Película:</strong><br><select style="width: 100px;" id="pelicula">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="Boogeyman: Tu Miedo Es Real">Boogeyman: Tu Miedo Es Real</option>
+                <option value="The Flash">The Flash</option>
+                <option value="Transformers: El Despertar De Las Bestias">Transformers: El Despertar De Las Bestias</option>
+                <option value="La Sirenita">La Sirenita</option>
+                <option value="Spider-Man: A través del SpiderVerso">Spider-Man: A través del SpiderVerso</option>
+                <option value="Rápidos y Furiosos X">Rápidos y Furiosos X</option>
+                <option value="Super Mario Bros, La Película">Super Mario Bros, La Película</option>
+                </select></div>
+        </div><br><br>
+        <div>
+            <div class="botones-container">
+                <input type="button" value="Agregar a la tabla" onclick="agregarALaTabla()">
+                <button id="eliminarBtn" onclick="eliminarDeLaTabla()">Eliminar de la tabla</button>
+            </div>
+        </div><br>
+    
+        <div style="padding-left: 40px;">
+            <table id="tablaVentaEnLinea">
+                <tr>
+                    <td>Posicion</td>
+                     <td>Sala</td>
+                     <td>Pelicula</td>
+            </table>
+        </div><br>
+        <div class="botones-container">
+            <input type="submit" value="Guardar" onclick="guardarVenta()">
+            <input type="button" value="Consultar" onclick="consultarVenta()">
+            <input type="button" value="Modificar">
+            <input type="reset" value="Cancelar">
+        </div>
+    </form>
+    
+</body>
+
+</html>
